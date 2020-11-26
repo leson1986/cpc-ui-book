@@ -1,2 +1,2 @@
 # cpc-ui-book
-a componnent manange web page
+a vue componnent manange web page
