@@ -3,14 +3,15 @@ import { configureReadme, addFooter, addHeader } from 'storybook-readme';
 configureReadme({
   // codeTheme: 'far',
   header: ``,
-  footer: `
+//   footer: `
 
-    - 版权所有
+//     - 版权所有 BEE-COMP
 
-    `,
+//     `,
 });
 
 import './About';
+import './Form';
 import './Flowline';
 // import './Button';
 // import './withCustomPreview';

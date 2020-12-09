@@ -59,6 +59,15 @@
   </div>
 </template>
 
+<docs>
+
+## Vue docs blocks 
+
+商业组件集
+
+<!-- PROPS -->
+
+</docs>
 <script>
 // import { Timeline, TimelineItem } from 'element-ui'
 // import 'element-ui/lib/theme-chalk/index.css'
@@ -68,6 +77,7 @@ export default {
     // components: {Timeline, TimelineItem},
     data() {
         return {
+            form: '我是bee',
             hasChild: true,
             activities: [
                 {
