@@ -77,14 +77,15 @@ export default {
 }
 </script>
 ```
-<summary>收起</summary>
+
 </details>
 
 ## Props
 |参数|说明|类型|可选值|默认值|
 |----------------------|--------------------------------|:--------:|:------------:|:------:|
 |flowData|数据|Array|—|—|
-|skin|皮肤|String|'gq', 'fl'|'gq'|
+|skin|皮肤|String|'gq'/'fl'|'gq'|
+|header|显示头部信息，‘fl’特供|Boolean|true/false|true|
 |defaultProps|默认属性,主要为信息对象属性,如果属性相同可不配置,反之,必须配置|Object|—|见defaultProps|
 |flowColor|节点颜色,根据状态配置相关颜色|Obejct|—|见flowColor|
 
@@ -100,7 +101,12 @@ export default {
 |time|最后审批时间|Date|—|—|
 |tenant|被指定操作者|String|—|—|
 |assignee|审批人姓名|String|—|—|
-|subTask|子任务流程信息|Array|—|—|
+|subTask|子任务流程信息，“gq"特供|Array|—|—|
+|statusFlag|状态标识（发起流程的原因），"fl"特供|String|—|—|
+|startTime|提交申请时间，"fl"特供|Date|—|—|
+|flowId|流程ID，"fl"特供|Array|—|—|
+|flowText|主流程文本，"fl"特供|Array|—|—|
+|subFlowText|子流程文本，"fl"特供|Array|—|—|
 
 ## flowColor
 |参数|说明|类型|可选值|默认值|
