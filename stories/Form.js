@@ -29,8 +29,10 @@ import 'element-ui/lib/theme-chalk/index.css'
 
 
 import BeeForm from '../components/Form/Form.vue';
+import BeeTree from '../components/Form/Tree.vue';
 
 import README from '../components/Form/README.md';
+import TREE from '../components/Form/TREE.md';
 
 Vue.component('el-form', Form)
 Vue.component('el-form-item', FormItem)
@@ -70,4 +72,18 @@ storiesOf('Form', module)
       },
       template: `<bee-form/>`,
     };
+  })
+  .add('表单树', () => {
+    return {
+      components: {
+        BeeTree,
+      },
+      template: `<bee-tree/>`,
+    };
+  },
+  {
+    readme: {
+      content: `<!-- PROPS -->`,
+      sidebar: TREE,
+    },
   });

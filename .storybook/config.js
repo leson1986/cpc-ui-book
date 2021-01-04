@@ -9,8 +9,13 @@ import element from 'element-ui'
 // Vue.use(Avue);
 
 
-import Bee from 'bee-home';
-import 'bee-home/lib/index.css';
+// import Bee from 'bee-home';
+// import 'bee-home/lib/index.css';
+// Vue.use(Bee);
+
+
+import Bee from './lib/bee.min.js';
+import './lib/index.css';
 Vue.use(Bee);
 
 import axios from 'axios';

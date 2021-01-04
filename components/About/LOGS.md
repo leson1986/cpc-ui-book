@@ -1,8 +1,9 @@
 ## V0.01Beta
 
 ### 新增
-- 流程线
-- https://leson1986.github.io/cpc-ui-book
+- 高级流程线
+- 员工选择
+- 固定导航
 
 ### 修复
 ### 优化

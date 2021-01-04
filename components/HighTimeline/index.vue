@@ -1,27 +1,59 @@
 <template>
-  <div class="flow-line-box">
-    <h3>GQ</h3>
-    <bee-flow-info :flow-data="activityData" skin="gq" :flow-props="flowLineProps" :flow-color="flowColor"></bee-flow-info>
-    <h3>FL</h3>
-    <bee-flow-info :flow-data="activityData" skin="fl" :flow-props="flowLineProps" :flow-color="flowColor"></bee-flow-info>
-  </div>
+    <div>
+        <h3>简洁版</h3>
+        <bee-high-timeline :flow-data="activityData" skin="pithy" :flow-props="flowLineProps" :flow-color="flowColor"></bee-high-timeline>
+        <h3>多彩版</h3>
+        <bee-high-timeline :flow-data="activityData" skin="rich" :flow-props="flowLineProps" :flow-color="flowColor"></bee-high-timeline>
+        <h3>信息版</h3>
+        <bee-high-timeline :flow-data="activityInfoData" skin="info" :flow-props="flowLineProps">
+            <template slot="other" slot-scope="scope">
+                <div>
+                    <i
+                        @click="handelDetails(scope)"
+                        title="查看详情"
+                        class="el-icon-tickets link-pointer"
+                        style="color: #1890FF;margin-right: 20px"
+                    >
+                    </i>
+                    <i
+                        @click="handleEdit(scope)"
+                        title="编辑详情"
+                        class="el-icon-edit link-pointer"
+                        style="color: #1890FF;"
+                    >
+                    </i>
+                </div>
+            </template>
+        </bee-high-timeline>
+    </div>
 </template>
 
-<docs>
-
-## Vue docs blocks 
-
-商业组件集
-
-<!-- PROPS -->
-
-</docs>
 <script>
-
+import { Message } from "element-ui";
+var baseUrl = "https://cli.avuejs.com/api/area";
 export default {
-    name: 'FlowLine',
     data() {
         return {
+                activityInfoData: [
+                    {
+                        endTime: '2010-12-08',
+                        startTime: '2010-10-08',
+                        mainText: "金融学",
+                        statusMainText: "全日制",
+                        otherMainText: "本科",
+                        subMainText: "广东金金融学院",
+                        subStatusMainText: "本科",
+                    },
+                    {
+                        endTime: '2010-12-08',
+                        startTime: '2010-10-08',
+                        mainText: "法学",
+                        statusMainText: "全日制",
+                        otherMainText: "本科",
+                        subMainText: "中国法律大学",
+                        subStatusMainText: "本科",
+                    },
+                ],
                 activityData: [
                     {
                         status: 'APPROVAL',
@@ -103,78 +135,14 @@ export default {
                 }
             }
     },
+    methods: {
+        handelDetails(row) {
+            Message.success(JSON.stringify(row));
+        },
+        handleEdit(row) {
+            Message.success(JSON.stringify(row));
+        }
+    }
+    
 };
 </script>
-<style>
-.flow-line-box {
-    margin: 10px;
-}
-.flow-line-box__con {
-    border-bottom: 1px dashed #E8E8E8;
-    min-height: 40px;
-    line-height: 20px;
-}
-.flow-line-box__con__label {
-    width: 200px;
-    font-size: 14px;
-    float: left;
-}
-.flow-line-box__con__label span {
-    display: block;
-    text-align: left;
-    font-size: 14px;
-    color: #595959;
-}
-.flow-line-box__con__label span i {
-    font-style: normal;
-}
-.flow-line-box__con__label span i:last-child {
-    font-size: 12px;
-    color: #595959;
-    padding-top: 3px;
-}
-
-
-.flow-line-box__con__info {
-    width: 140px;
-    float: right;
-}
-.flow-line-box__con__info span {
-    display: block;
-    text-align: right;
-    font-size: 14px;
-    color: #595959;
-}
-.flow-line-box__con__info span:last-child {
-    font-size: 12px;
-    color: #8C8C8C;
-    padding-top: 3px;
-}
-
-
-.flow-line-box__con__comment {
-    width: 200px;
-    overflow: auto;
-    display: block;
-    padding-bottom: 10px;
-}
-.flow-line-box__con__comment::after {
-    content: '';
-    display: block;
-    clear: both;
-}
-
-.flow-line-box::v-deep .el-timeline{
-    padding: 0;
-}
-.flow-line-box::v-deep .el-timeline-item__node--normal{
-    width: 8px;
-    height: 8px;
-}
-.flow-line-box::v-deep .el-timeline-item__tail{
-    left: 3px;
-}
-.flow-line-box::v-deep .el-timeline-item__wrapper{
-    padding-left: 18px;
-}
-</style>

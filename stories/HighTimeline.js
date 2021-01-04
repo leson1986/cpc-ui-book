@@ -5,27 +5,27 @@ import 'element-ui/lib/theme-chalk/index.css'
 import {AvueInput} from '@smallwei/avue';
 
 
-import Flowline from '../components/Flowline/Flowline.vue';
+import HighTimeline from '../components/HighTimeline/index.vue';
 
-import README from '../components/Flowline/README.md';
+import README from '../components/HighTimeline/README.md';
 
 // Vue.component('avue-input', AvueInput)
 Vue.component('el-input', Input)
 Vue.component('el-timeline', Timeline)
 Vue.component('el-timeline-item', TimelineItem)
 
-storiesOf('Flowline', module)
+storiesOf('时间线', module)
   .addParameters({
     readme: {
       content: `<!-- PROPS -->`,
       sidebar: README,
     },
   })
-  .add('Flowline', () => {
+  .add('高级时间线', () => {
     return {
       components: {
-        Flowline,
+        HighTimeline,
       },
-      template: `<Flowline/>`,
+      template: `<HighTimeline/>`,
     };
   });

@@ -29,13 +29,9 @@
             </span>
         </bee-form>
 
+        <bee-crud :option="option2" :data="data"></bee-crud>
         <bee-form :option="option2" v-model="form"></bee-form>
 
-        <!-- <avue-form :option="option3" v-model="obj3">
-            <template slot-scope="{ row }" slot="input">
-                <el-tag>{{ row }}</el-tag>
-            </template>
-        </avue-form> -->
     </div>
 </template>
 
@@ -47,6 +43,7 @@ export default {
     name: "Form",
     data() {
         return {
+            data: [],
             obj3: {
                 dynamic: [
                     {
