@@ -1,7 +1,7 @@
 import { configureReadme, addFooter, addHeader } from 'storybook-readme';
 
 configureReadme({
-  // codeTheme: 'far',
+  codeTheme: 'far',
   header: ``,
 //   footer: `
 
@@ -12,6 +12,10 @@ configureReadme({
 
 import './About';
 import './Form';
+import './FormDemo';
+import './CrudDemo';
 import './HighTimeline';
 import './Treetable';
 import './FixedNav';
+import './Orgchart';
+import './HighUpload';
